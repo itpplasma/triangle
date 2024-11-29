@@ -208,14 +208,6 @@
 /*   recommend double precision unless you want to generate a mesh for which */
 /*   you do not have enough memory.                                          */
 
-/* #define SINGLE */
-
-#ifdef SINGLE
-#define REAL float
-#else /* not SINGLE */
-#define REAL double
-#endif /* not SINGLE */
-
 /* If yours is not a Unix system, define the NO_TIMER compiler switch to     */
 /*   remove the Unix-specific timing code.                                   */
 
@@ -11627,7 +11619,7 @@ vertex searchpoint;
   // Number of iterations allowed before throwing an exception and declaring
   // this to be hitting a bug that causes an infinite loop.
   //
-  // Valid worst case: vertex is incident on every face. 
+  // Valid worst case: vertex is incident on every face.
   int max_iter = 2*m->triangles.items+100;
 
   org(*searchtri, startvertex);
